@@ -1,27 +1,25 @@
-import VueRouter from 'vue-router';
 import Vue from 'vue';
-import {NewsView} from '../views/NewsView.vue'
-import {AskView} from '../views/AskView.vue'
-import {JobsView} from '../views/JobsView.vue'
+import VueRouter from 'vue-router';
+import NewsView from '../views/NewsView.vue';
+import AskView from '../views/AskView.vue';
+import JobsView from '../views/JobsView.vue';
+
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
     routes:[
         {
-            path :'/news',
-            components:NewsView
+            path:'/news',
+            component:NewsView
         },
         {
-            path :'/ask',
-            components:AskView
+            path:'/ask',
+            component:AskView
         },
         {
-            path :'/jobs',
-            components:JobsView
+            path:'/jobs',
+            component:JobsView
         }
-
     ]
 })
-
-
