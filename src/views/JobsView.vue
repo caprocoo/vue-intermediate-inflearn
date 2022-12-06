@@ -1,28 +1,37 @@
 <template>
   <div>
-    <div v-for="job in jobList"  v-bind:key="job">
-      {{job.title}}
-    </div>
+<!--    <div v-for="job in jobs"  v-bind:key="job">-->
+<!--      {{job.title}}-->
+<!--    </div>-->
+    <p v-for="job in jobs" v-bind:key="job.id">
+      <a :href="job.url">
+        {{ job.title }}
+      </a>
+      <small>
+        {{job.time_ago}}, {{job.domain}}
+      </small>
+    </p>
   </div>
 
 </template>
 <script>
-import {getJobsList} from '../api/index.js'
+import {mapState} from 'vuex';
+
 export default {
   data(){
     return {
-      jobList:[],
+
     }
   },
-  created() {
-    let vm = this;
-    getJobsList()
-        .then(response=>{
-          vm.jobList = response.data;
+  computed:{
+    ...mapState({
+      jobs:state => state.jobsList
+    }),
 
-        }).catch(error =>{
-          console.log('error', error)
-    })
+
+  },
+  created() {
+    this.$store.dispatch('GET_JOBS');
   }
 }
 </script>

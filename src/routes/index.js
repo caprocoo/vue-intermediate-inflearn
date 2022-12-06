@@ -11,6 +11,7 @@ import ItemView from '../views/ItemView.vue';
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+    //url '#'값 제거하기
     mode:'history',
     routes:[
         {
