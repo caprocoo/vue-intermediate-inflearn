@@ -20,6 +20,9 @@ export const store = new Vuex.Store({
         },
         jobs(state){
             return state.jobsList;
+        },
+        items(state){
+            return state.askItem;
         }
     },
     //actions에서 값을 받아 state로 넘겨준다.
