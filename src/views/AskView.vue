@@ -9,7 +9,9 @@
         {{ ask.title }}
       </a>
       <small>
-        {{ask.time_ago}} by {{ask.user}}
+        {{ask.time_ago}} by
+        <router-link v-bind:to="`item/${ask.id}`">{{ask.user}}</router-link>
+
       </small>
     </p>
   </div>
@@ -49,6 +51,8 @@ export default {
     //     }).catch(error =>{
     //   console.log('error', error)
     // })
+
+
 
     // store에 있는 actions를 호출한다.
     // actions 호출 -> mutations 호출 -> state 값 들어감

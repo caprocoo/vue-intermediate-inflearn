@@ -10,6 +10,8 @@ export const store = new Vuex.Store({
         newsList:[],
         askList:[],
         jobsList:[],
+        userDatail:{},
+        askItem:{},
     },
     //script에서 사용하는 computed와 같은 역할을 한다.
     getters:{

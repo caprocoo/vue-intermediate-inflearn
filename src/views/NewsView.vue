@@ -5,7 +5,8 @@
         {{ news.title }}
       </a>
       <small>
-        {{news.time_ago}} by {{news.user}}
+        {{news.time_ago}} by
+        <router-link v-bind:to="`user/${news.user}`">{{news.user}}</router-link>
       </small>
     </p>
   </div>

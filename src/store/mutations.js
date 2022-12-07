@@ -8,5 +8,12 @@ export default {
     },
     SET_ASK(state, data){
         state.askList = data;
+    },
+    SET_USER_DETAIL(state, data){
+        state.userDatail = data;
+    },
+    SET_ASK_ITEM(state, data){
+        state.askItem = data;
     }
+
 }

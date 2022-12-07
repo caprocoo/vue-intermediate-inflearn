@@ -20,11 +20,18 @@ function getJobsList(){
 function getAskList(){
     return axios.get(`${config.baseUrl}ask/1.json`)
 }
-
+function getUserDetail(userName){
+    return axios.get(`${config.baseUrl}user/${userName}.json`)
+}
+function getItemDetail(askItem){
+    return axios.get(`${config.baseUrl}item/${askItem}.json`)
+}
 export {
     getNewsList,
     getJobsList,
-    getAskList
+    getAskList,
+    getUserDetail,
+    getItemDetail
 }
 
 
