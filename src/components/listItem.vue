@@ -2,24 +2,36 @@
   <div>
 
     <ul class="news-list">
-      <li v-for="news in allNews" v-bind:key="news.id" class="post">
+      <li v-for="items in listItems" v-bind:key="items.id" class="post">
         <!-- point 영역-->
         <div class="points">
-          {{ news.points }}
+          {{ items.points || 0 }}
         </div>
 
         <!-- 기타 정보 영역-->
         <div>
           <p class="news-title">
-            <a v-bind:href="news.url">
-              {{ news.title }}
-            </a>
+            <template v-if="items.domain">
+              <a v-bind:href="items.url">
+                {{ items.title }}
+              </a>
+            </template>
+            <template v-else>
+              <router-link v-bind:to="`item/${items.id}`" class="link-text">
+                {{ items.title }}
+              </router-link>
+            </template>
+
           </p>
           <small class="link-text">
             by
-            <router-link class="link-text" v-bind:to="`user/${news.user}`">{{ news.user }}</router-link>
+            <router-link
+                v-if="items.user"
+                class="link-text" v-bind:to="`user/${items.user}`">{{ items.user }}
+            </router-link>
+            <a :href="items.url" v-else>{{ items.domain }}</a>
+            {{ items.time_ago }}
           </small>
-
         </div>
 
       </li>
@@ -34,12 +46,35 @@ export default {
     return {}
   },
   computed: {
-    allNews() {
-      return this.$store.state.newsList;
+    // allNews() {
+    //   return this.$store.state.newsList;
+    // },
+    listItems() {
+      let name = this.$route.name;
+      if (name === 'ask') {
+        return this.$store.state.askList;
+      } else if (name === 'news') {
+        return this.$store.state.newsList;
+      } else if (name === 'jobs') {
+        return this.$store.state.jobsList;
+      }
+      return null;
+
+
     }
   },
   created() {
-    this.$store.dispatch('GET_NEWS');
+
+    let name = this.$route.name;
+    if (name === 'ask') {
+      this.$store.dispatch('GET_ASK');
+    } else if (name === 'news') {
+      this.$store.dispatch('GET_NEWS');
+    } else if (name === 'jobs') {
+      this.$store.dispatch('GET_JOBS');
+    }
+
+
   }
 }
 </script>
