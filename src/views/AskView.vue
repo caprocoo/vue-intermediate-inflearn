@@ -18,11 +18,8 @@
             by
             <router-link v-bind:to="`item/${ask.id}`" class="link-text">{{ ask.user }}</router-link>
             , {{ ask.time_ago }}
-
           </small>
-
         </div>
-
       </li>
     </ul>
 
@@ -94,10 +91,12 @@ export default {
   justify-content: center;
   color: #42b883;
 }
-.ask-title{
+
+.ask-title {
   margin: 0;
 }
-.link-text{
+
+.link-text {
   color: #828282;
 }
 </style>

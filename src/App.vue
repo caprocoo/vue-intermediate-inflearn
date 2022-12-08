@@ -10,40 +10,43 @@
 
 <script>
 import ToolBar from './components/ToolBar.vue'
+
 export default {
-  components:{
+  components: {
     ToolBar,
   }
 }
 </script>
 
 <style>
-  body{
-    padding : 0;
-    margin : 0;
-  }
-  /* Router Transition */
-  /* 페이지 변화 시 action - 부드럽게 모션 주기 */
-  .page-enter-active, .page-leave-active{
-    transition: opacity .5s;
-  }
-  .page-enter, .page-leave-to{
-    opacity: 0;
-  }
+body {
+  padding: 0;
+  margin: 0;
+}
 
-  /* a태그 중에 밑줄 제거 */
-  a{
-    text-decoration: none;
-  }
+/* Router Transition */
+/* 페이지 변화 시 action - 부드럽게 모션 주기 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
 
-  /* a태그에 마우스 hover시 색 변화 및 underline 추가 */
-  a:hover{
-    color: #42b883;
-    text-decoration: underline;
-  }
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
 
-  /* ToolBar의 선택한 분류에 따라 밑줄로 강조 */
-  a.router-link-exact-active{
-    text-decoration: underline;
-  }
+/* a태그 중에 밑줄 제거 */
+a {
+  text-decoration: none;
+}
+
+/* a태그에 마우스 hover시 색 변화 및 underline 추가 */
+a:hover {
+  color: #42b883;
+  text-decoration: underline;
+}
+
+/* ToolBar의 선택한 분류에 따라 밑줄로 강조 */
+a.router-link-exact-active {
+  text-decoration: underline;
+}
 </style>

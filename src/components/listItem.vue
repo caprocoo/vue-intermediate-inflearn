@@ -1,54 +1,51 @@
 <template>
   <div>
-    <ul class="job-list">
-      <li v-for="job in jobs" v-bind:key="job.id" class="post">
+
+    <ul class="news-list">
+      <li v-for="news in allNews" v-bind:key="news.id" class="post">
+        <!-- point 영역-->
         <div class="points">
-          {{ job.comments_count }}
+          {{ news.points }}
         </div>
+
+        <!-- 기타 정보 영역-->
         <div>
-          <p class="job-title">
-            <a :href="job.url">
-              {{ job.title }}
+          <p class="news-title">
+            <a v-bind:href="news.url">
+              {{ news.title }}
             </a>
           </p>
           <small class="link-text">
             by
-            <a :href="job.url">{{ job.domain }}</a>, {{ job.time_ago }}
+            <router-link class="link-text" v-bind:to="`user/${news.user}`">{{ news.user }}</router-link>
           </small>
+
         </div>
+
       </li>
     </ul>
 
   </div>
-
 </template>
 <script>
-import {mapState} from 'vuex';
 
 export default {
   data() {
     return {}
   },
   computed: {
-    ...mapState({
-      jobs: state => state.jobsList
-    }),
-
-
+    allNews() {
+      return this.$store.state.newsList;
+    }
   },
   created() {
-    this.$store.dispatch('GET_JOBS');
+    this.$store.dispatch('GET_NEWS');
   }
 }
 </script>
 <style scoped>
-
-.job-list {
-  margin: 0;
+.news-list {
   padding: 0;
-}
-
-.job-title {
   margin: 0;
 }
 
@@ -68,8 +65,11 @@ export default {
   color: #42b883;
 }
 
+.news-title {
+  margin: 0;
+}
+
 .link-text {
   color: #828282;
-
 }
 </style>
