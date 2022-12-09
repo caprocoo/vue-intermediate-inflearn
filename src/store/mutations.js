@@ -14,6 +14,7 @@ export default {
     },
     SET_ASK_ITEM(state, data){
         state.askItem = data;
-    }
+    },
+
 
 }

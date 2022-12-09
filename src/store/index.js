@@ -3,8 +3,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 import mutations from './mutations.js'
 import actions from './actions.js'
+import {memberStore} from "@/store/member/memberStore";
 
 export const store = new Vuex.Store({
+    modules:{memberStore},
     //store에 있는 실질적인 값들
     state:{
         newsList:[],
