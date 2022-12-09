@@ -1,9 +1,9 @@
 import axios from "axios";
 
-function getHello(){
+function getMember(){
     return axios.get('/api/hello')
 }
 
 export{
-    getHello,
+    getMember,
 }

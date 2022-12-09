@@ -6,7 +6,7 @@ import actions from './actions.js'
 
 export const memberStore = {
     state:{
-        hello:{},
+        member:{},
     },
     getters:{
 

@@ -1,11 +1,11 @@
-import {getHello} from "@/api/member"
+import { getMember} from "@/api/member"
 
 export default {
 
-    GET_HELLO({commit}, params) {
-        getHello(params)
+    GET_MEMBER({commit}, params) {
+        getMember(params)
             .then(({data}) => {
-                commit('SET_HELLO', data);
+                commit('SET_MEMBER', data);
             })
             .catch(error => {
                 console.log('error', error);

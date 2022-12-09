@@ -5,7 +5,9 @@ import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
-import HelloView from '../views/member/HelloView.vue';
+import MemberView from '../views/member/MemberView.vue';
+import MainView from "@/views/MainView";
+import JoinView from "@/views/member/JoinView";
 
 
 Vue.use(VueRouter);
@@ -16,7 +18,12 @@ export const router = new VueRouter({
     routes:[
         {
             path:'/',
-            redirect:'news'
+            redirect:'main'
+        },
+        {
+            path:'/main',
+            name : 'main',
+            component:MainView
         },
         {
             path:'/news',
@@ -42,8 +49,12 @@ export const router = new VueRouter({
             component:UserView
         },
         {
-            path:'/hello',
-            component:HelloView
+            path:'/member',
+            component:MemberView
+        },
+        {
+            path:'/member/join',
+            component:JoinView
         },
     ]
 })

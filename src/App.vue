@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <!-- html에 적용할 때 케밥 형식으로 기입할 수 있다. -->
     <tool-bar></tool-bar>
     <transition name="page">
