@@ -1,10 +1,11 @@
 <template>
   <div>
+
     <head>
       <title>Editorial by HTML5 UP</title>
       <meta charset="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-      <link href="../assets/css/main.css"/>
+
     </head>
     <body class="is-preload">
 
@@ -254,13 +255,7 @@
     </div>
 
 
-    <!-- Scripts -->
 
-    <script type="text/html" src="../assets/js/jquery.min.js"></script>
-    <script type="text/html" src="src/assets/js/browser.min.js"></script>
-    <script type="text/html" src="src/assets/js/breakpoints.min.js"></script>
-    <script type="text/html" src="src/assets/js/util.js"></script>
-    <script type="text/html" src="src/assets/js/main.js"></script>
 
     </body>
   </div>
