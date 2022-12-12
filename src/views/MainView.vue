@@ -1,13 +1,52 @@
 <template>
-  <div>
-    Main
+  <div class="main">
+    <div>
+      <div>aavvvv</div>
+      <div>bbvvvv</div>
+      <div>ccvvvv</div>
+      <div>ddvvvvv</div>
+      <div>eevvvv</div>
+    </div>
   </div>
 </template>
 <script>
+let now = new Date();
+// let nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+let firstDate = new Date('2021-11-19');
+let nowDate = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
 export default {
-  components: {}
+  data() {
+    return {
+      loveDate: '',
+    }
+  },
+  methods: {
+    // d1에서 d2를 뺀 총 일자 만드는 함수
+    getDateDiff(d1, d2) {
+      let date1 = new Date(d1);
+      let date2 = new Date(d2);
+      let diffDate = date1.getTime() - date2.getTime();
+      return Math.abs(diffDate / (1000 * 60 * 60 * 24));
+    }
+  },
+  components: {},
+  mounted() {
+
+
+    this.loveDate = this.getDateDiff(nowDate, firstDate) + 1;
+
+
+  }
+
 }
 </script>
 <style>
+.main {
+  background-image: url("@/images/bear.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 </style>

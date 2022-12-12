@@ -3,9 +3,9 @@
 
     <!-- html에 적용할 때 케밥 형식으로 기입할 수 있다. -->
 <!--    <tool-bar></tool-bar>-->
-    <Header/>
+    <Header class="header"/>
     <transition name="page">
-      <router-view></router-view>
+      <router-view class="scroller"/>
     </transition>
   </div>
 </template>
@@ -21,11 +21,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
   padding: 0;
   margin: 0;
 
+}
+.routerView{
+  height: auto;
 }
 /* Router Transition */
 /* 페이지 변화 시 action - 부드럽게 모션 주기 */
@@ -48,5 +51,6 @@ a:hover {
 a.router-link-exact-active {
   text-decoration: underline;
 }
+
 
 </style>

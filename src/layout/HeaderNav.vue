@@ -4,13 +4,14 @@
     <div id="app" class="first">
       <v-app id="inspire" class="header">
         <v-app-bar
-            fixed
+            absolute
             color="#6A76AB"
             dark
             shrink-on-scroll
             prominent
             src="https://picsum.photos/1920/1080?random"
             fade-img-on-scroll
+            scroll-target="scroller"
         >
           <template v-slot:img="{ props }">
             <v-img
@@ -39,8 +40,8 @@
           <!--          </v-btn>-->
 
           <template v-slot:extension>
-            <v-tabs align-with-title>
-              <v-tab to="/">MAIN</v-tab>
+            <v-tabs align-with-title >
+              <v-tab to="/main">MAIN</v-tab>
               <v-tab to="/news">NEWS</v-tab>
               <v-tab to="/ask">ASK</v-tab>
               <v-tab to="jobs">JOBS</v-tab>
@@ -124,14 +125,20 @@ export default {
 </script>
 <style scoped>
 .first {
-  height: 230px;
+  height: auto;
+  width: 100%;
+  /*padding-bottom: 230px;*/
 }
+
+
 
 .header {
   position: sticky;
   height: 50px;
   border-bottom: 1px solid #ebebeb;
-  visibility: visible
+  visibility: visible;
+
+
 }
 
 
