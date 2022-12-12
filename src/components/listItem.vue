@@ -1,8 +1,11 @@
 <template>
   <div>
-
     <ul class="news-list">
-      <li v-for="items in listItems" v-bind:key="items.id" class="post">
+      <li
+        v-for="items in listItems"
+        :key="items.id"
+        class="post"
+      >
         <!-- point 영역-->
         <div class="points">
           {{ items.points || 0 }}
@@ -12,31 +15,36 @@
         <div>
           <p class="news-title">
             <template v-if="items.domain">
-              <a v-bind:href="items.url">
+              <a :href="items.url">
                 {{ items.title }}
               </a>
             </template>
             <template v-else>
-              <router-link v-bind:to="`item/${items.id}`" class="link-text">
+              <router-link
+                :to="`item/${items.id}`"
+                class="link-text"
+              >
                 {{ items.title }}
               </router-link>
             </template>
-
           </p>
           <small class="link-text">
             by
             <router-link
-                v-if="items.user"
-                class="link-text" v-bind:to="`user/${items.user}`">{{ items.user }}
+              v-if="items.user"
+              class="link-text"
+              :to="`user/${items.user}`"
+            >{{ items.user }}
             </router-link>
-            <a :href="items.url" v-else>{{ items.domain }}</a>
+            <a
+              v-else
+              :href="items.url"
+            >{{ items.domain }}</a>
             {{ items.time_ago }}
           </small>
         </div>
-
       </li>
     </ul>
-
   </div>
 </template>
 <script>

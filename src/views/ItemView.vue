@@ -3,22 +3,21 @@
     <section>
       <div class="user-container">
         <div>
-          <i class="fas fa-user"></i>
+          <i class="fas fa-user" />
         </div>
         <div class="user-description">
           <router-link :to="`/user/${items.user}`">
-            {{items.user}}
+            {{ items.user }}
           </router-link>
           <div class="time">
-            {{items.time_ago}}
+            {{ items.time_ago }}
           </div>
         </div>
       </div>
-      <h2>{{items.title}}</h2>
+      <h2>{{ items.title }}</h2>
     </section>
     <section>
-      <div v-html="items.content">
-      </div>
+      <div v-html="items.content" />
     </section>
   </div>
 </template>

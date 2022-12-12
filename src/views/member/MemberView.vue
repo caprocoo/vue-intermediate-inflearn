@@ -6,11 +6,9 @@
       <p>
         <a href="/member/join">회원가입</a> |
         <a href="/member/list">회원 목록</a>
-
       </p>
     </div>
   </div>
-
 </template>
 <script>
 

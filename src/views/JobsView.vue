@@ -1,8 +1,7 @@
 <template>
   <div>
-    <ListItem></ListItem>
+    <ListItem />
   </div>
-
 </template>
 <script>
 import ListItem from "@/components/listItem";
