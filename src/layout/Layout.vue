@@ -1,25 +1,25 @@
 <template>
   <div>
     <Header/>
-    <NavBar/>
-<!--    <router-view/>-->
+    <div >
+      <router-view />
+    </div>
+
+
   </div>
 </template>
 <script>
-import Header from '@/layout/Header.vue'
-import NavBar from '@/layout/NavBar.vue'
-
+import Header from '@/layout/HeaderNav.vue'
 export default {
   data() {
     return {}
   },
   components: {
     Header,
-    NavBar
+
 
   }
 }
 </script>
 <style>
-
 </style>

@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import ListItem from "@/components/listItem";
+import ListItem from "@/components/ListItem";
 
 export default {
   components: {
@@ -18,3 +18,7 @@ export default {
   }
 }
 </script>
+<style>
+
+
+</style>

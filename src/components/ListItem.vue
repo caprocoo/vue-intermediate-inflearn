@@ -115,4 +115,5 @@ export default {
 .link-text {
   color: #828282;
 }
+
 </style>
