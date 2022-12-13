@@ -31,13 +31,5 @@ export default {
 
 }
 
-.side{
-  flex:1;
-
-}
-
-/*.main{*/
-/*  flex: 4;*/
-/*}*/
 
 </style>
