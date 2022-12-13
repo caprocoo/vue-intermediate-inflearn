@@ -41,12 +41,12 @@ export default {
 }
 </script>
 <style>
-.main {
-  background-image: url("@/images/bear.jpg");
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+/*.main {*/
+/*  background-image: url("@/images/bear.jpg");*/
+/*  height: 100vh;*/
+/*  width: 100vw;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*}*/
 
 </style>
