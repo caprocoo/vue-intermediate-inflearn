@@ -16,10 +16,12 @@ export const router = new VueRouter({
     //url '#'값 제거하기
     mode:'history',
     routes:[
+
         {
             path: '/',
             redirect:'/main',
-            component: () => import('@/layout/Layout.vue'),
+            // component: () => import('@/layout/LayoutSub.vue'),
+            component: () => import('@/layout/LayoutSub.vue'),
             children:[
                 {
                     path:'/main',
