@@ -54,36 +54,14 @@ export default {
     return {}
   },
   computed: {
-    // allNews() {
-    //   return this.$store.state.newsList;
-    // },
+
     listItems() {
-      let name = this.$route.name;
-      if (name === 'ask') {
-        return this.$store.state.askList;
-      } else if (name === 'jobs') {
-        return this.$store.state.jobsList;
-      }else if (name === 'news') {
-        return this.$store.state.newsList;
-      }
-      return null;
+      return this.$store.state.list;
 
 
     }
   },
-  // created() {
-  //
-  //   let name = this.$route.name;
-  //   if (name === 'ask') {
-  //     this.$store.dispatch('GET_ASK');
-  //   } else if (name === 'news') {
-  //     this.$store.dispatch('GET_NEWS');
-  //   } else if (name === 'jobs') {
-  //     this.$store.dispatch('GET_JOBS');
-  //   }
-  //
-  //
-  // }
+
 }
 </script>
 <style scoped>

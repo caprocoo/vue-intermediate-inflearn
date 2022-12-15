@@ -1,42 +1,18 @@
-import {getAskList, getJobsList, getNewsList, getUserDetail, getItemDetail} from "@/api";
+import {getUserDetail, getItemDetail, getList} from "@/api";
 
 export default {
-    //getNewsList 호출
-    GET_NEWS(context){
-        getNewsList()
-            .then(response=>{
-                //mutations에 값을 넘기는 행위
-                context.commit('SET_NEWS', response.data);
-                // return response;
-            })
-            .catch(error=>{
-                console.log('error', error);
-            })
+    GET_LIST({commit}, pageName) {
+        getList(pageName)
+            .then(({data}) => {
+                commit('SET_LIST', data)
+            }).catch((err) => console.log(err));
     },
-    //getJobsList 호출
-    GET_JOBS(context){
-        getJobsList()
-            .then(response=>{
-                context.commit('SET_JOBS', response.data);
-            })
-    },
-    //getAskList 호출
-    GET_ASK({commit}){
-        getAskList()
-            .then(response=>{
-                //mutations에 값을 넘기는 행위
-                commit('SET_ASK', response.data);
-            })
-            .catch(error=>{
-                console.log('error', error);
-            })
-    },
-    GET_USER_DETAIL({commit}, param){
+    GET_USER_DETAIL({commit}, param) {
         getUserDetail(param)
-            .then(({data})=>{
+            .then(({data}) => {
                 commit('SET_USER_DETAIL', data);
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log('error', error);
             })
     },
@@ -51,4 +27,4 @@ export default {
     },
 
 
-}
+};
