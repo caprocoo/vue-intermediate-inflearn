@@ -7,6 +7,7 @@ export default {
             .then(response=>{
                 //mutations에 값을 넘기는 행위
                 context.commit('SET_NEWS', response.data);
+                // return response;
             })
             .catch(error=>{
                 console.log('error', error);

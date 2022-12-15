@@ -1,41 +1,31 @@
 <template>
   <div>
     <section>
-<!--      <div class="user-container">-->
-<!--        <div>-->
-<!--          <i class="fas fa-user" />-->
-<!--        </div>-->
-<!--        <div class="user-description">-->
-<!--          <router-link :to="`/user/${items.user}`">-->
-<!--            {{ items.user }}-->
-<!--          </router-link>-->
-<!--          <div class="time">-->
-<!--            {{ items.time_ago }}-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <UserProfile :info=" items">
         <div slot="username">{{ items.id }}</div>
-        <div slot="time">{{ items.time_ago }}</div>
+        <router-link slot="username" :to="`/user/${items.user}`">
+          {{ items.user }}
+        </router-link>
+        <div slot="time">{{'Posted'+ items.time_ago }}</div>
       </UserProfile>
     </section>
     <section>
       <h2>{{ items.title }}</h2>
     </section>
     <section>
-      <div v-html="items.content" />
+      <div v-html="items.content"/>
     </section>
   </div>
 </template>
 <script>
 import {mapGetters} from "vuex";
 import UserProfile from "@/components/UserProfile";
+
 export default {
-  components:{
+  components: {
     UserProfile
   },
-  computed:{
+  computed: {
     ...mapGetters(['items'])
 
   },
@@ -47,19 +37,22 @@ export default {
 }
 </script>
 <style scoped>
-.user-container{
+.user-container {
   display: flex;
   align-items: center;
   padding: 0.5rem;
 
 }
-.fa-user{
+
+.fa-user {
   font-size: 2.5rem;
 }
-.user-description{
+
+.user-description {
   padding-left: 8px;
 }
-.time{
+
+.time {
   font-size: 0.7rem;
 }
 </style>

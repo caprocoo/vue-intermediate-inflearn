@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div>
-      asdasdasd
+      main page
     </div>
   </div>
 </template>
