@@ -4,8 +4,9 @@
       <h1>{{ member.title }} MEMBER </h1>
       <p>회원 기능</p>
       <p>
-        <a href="/member/join">회원가입</a> |
-        <a href="/member/list">회원 목록</a>
+        <router-link to="/member/join">회원가입</router-link> |
+        <router-link to="/member/list">회원 목록</router-link> |
+
       </p>
     </div>
   </div>

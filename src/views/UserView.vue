@@ -1,14 +1,22 @@
 <template>
   <div>
-    <p> name : {{ userInfo.id }}</p>
-    <p> karma : {{ userInfo.karma }}</p>
-    <p> created : {{ userInfo.created }}</p>
+    <UserProfile :info = "userInfo">
+      <div slot="username">{{ userInfo.id }}</div>
+      <div slot="time">{{ userInfo.created }}</div>
+      <div slot="karma">{{ userInfo.karma }}</div>
+    </UserProfile>
+<!--    <p> name : {{ userInfo.id }}</p>-->
+<!--    <p> karma : {{ userInfo.karma }}</p>-->
+<!--    <p> created : {{ userInfo.created }}</p>-->
   </div>
 </template>
 <script>
-
+import UserProfile from "@/components/UserProfile";
 
 export default {
+  components:{
+    UserProfile
+  },
   computed:{
     userInfo(){
       return this.$store.state.userDatail;

@@ -12,6 +12,12 @@
           <nav id="drawer">
             <ul>
               <li><a href="/main">MAIN</a></li>
+              <li>
+              <div class="subnav">
+                <button class="subnavbtn fas fa-caret-down ">SUB </button>
+<!--                  <i class="fas fa-caret-down"></i>-->
+              </div>
+              </li>
               <li><a href="/news">NEWS</a></li>
               <li><a href="/ask">ASK</a></li>
               <li><a href="/jobs">JOBS</a></li>
@@ -37,11 +43,15 @@
 export default {
   data() {
     return {
+      //drawer
       drawer: false,
       group: null,
+      //dropdown
+      isDropped:false,
     }
   },
   watch: {
+    //drawer
     group() {
       this.drawer = false
     }
@@ -52,7 +62,7 @@ export default {
     window.onscroll = function () {
       scrollFunction()
     };
-
+    //header scrollFunction
     function scrollFunction() {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementById("navbar").style.padding = "50px 10px";
@@ -64,6 +74,11 @@ export default {
     };
 
 
+  },
+  methods:{
+    dropIt() {
+      this.isDropped = !this.isDropped
+    }
   },
   updated() {
 
@@ -122,7 +137,7 @@ export default {
 
 /* Links on mouse-over */
 
-#navbar .active:hover, .nav a:hover, .dropdown:hover .dropbtn {
+#navbar .active:hover, .nav a:hover {
   color: black;
   background-color: #ddd;
 }
@@ -157,27 +172,6 @@ export default {
 }
 
 /*햄버거 css*/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  /* adds animation for all transitions */
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-  margin: 0;
-  padding: 0;
-  -webkit-text-size-adjust: none;
-}
-
-/* Makes sure that everything is 100% height */
-
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
 
 /* gets the actual input out of the way;
 we're going to style the label instead */
@@ -229,6 +223,7 @@ header {
 }
 
 /* drawer menu pane - note the 0px width */
+/* drawer 시작 */
 #main-drawer {
   top: 0;
   left: 0;
@@ -326,4 +321,24 @@ header {
     margin-left: calc(100% - 50px);
   }
 }
+/* drawer 끝 */
+
+#navbar #nav #main-drawer #drawer .subnav {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  margin: 0;
+}
+
+.subnav .subnavbtn{
+  padding:10px;
+  width:25px;
+}
+
+.button-examples i {
+  display: flex;
+  margin: 0 auto;
+}
+
 </style>
