@@ -1,6 +1,7 @@
 
 import ListView from "@/views/ListView";
 import bus from "@/utils/bus";
+// import ListMixin from "@/mixins/ListMixin";
 
 export default function createListView(name){
     return {
@@ -11,7 +12,6 @@ export default function createListView(name){
             setTimeout(() => {
                 this.$store.dispatch('GET_LIST', this.$route.name)
                     .then(() => {
-
                         bus.$emit('end:spinner');
                     })
                     .catch((err) => {
@@ -19,6 +19,7 @@ export default function createListView(name){
                     });
             }, 500);
         },
+
         render(createElement) {
             return createElement(ListView);
         }
