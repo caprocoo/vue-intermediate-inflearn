@@ -3,7 +3,7 @@ import { getMember} from "@/api/member"
 export default {
 
     GET_MEMBER({commit}, params) {
-        getMember(params)
+        return getMember(params)
             .then(({data}) => {
                 commit('SET_MEMBER', data);
             })
